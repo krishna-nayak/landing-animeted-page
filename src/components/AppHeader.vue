@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <header id="nav">
     <!-- <router-link class="logo" to="/">LOGO</router-link> -->
@@ -9,16 +10,24 @@
         style="width: 50px; height: 50px"
       />
     </router-link>
-    <router-link
-      class="link"
-      v-for="item in items"
-      :key="item.to"
-      :to="item.to"
+    <div
+      :class="{ 'links-active': navToggle, 'display-none': !navToggle }"
+      class="links"
     >
-      {{ item.title }}
-    </router-link>
+      <router-link
+        class="link"
+        v-for="item in items"
+        :key="item.to"
+        :to="item.to"
+      >
+        {{ item.title }}
+      </router-link>
+    </div>
 
     <button type="submit" class="start-btn">Start Now</button>
+    <button @click="navMenu" class="nav-toggle-btn">
+      <i class="fas fa-bars fa-2x"></i>
+    </button>
   </header>
 </template>
 
@@ -26,12 +35,18 @@
 export default {
   data() {
     return {
+      navToggle: false,
       items: [
         { to: "/about", title: "About" },
         { to: "/features", title: "Features" },
         { to: "/contact", title: "Contact" },
       ],
     };
+  },
+  methods: {
+    navMenu() {
+      this.navToggle = !this.navToggle;
+    },
   },
 };
 </script>
@@ -53,6 +68,10 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+#nav .links {
+  display: flex;
+  align-items: center;
+}
 #nav .logo {
   margin-right: 80px;
 }
@@ -72,4 +91,40 @@ export default {
   font-weight: 600;
   background: transparent;
 }
+
+.nav-toggle-btn {
+  display: none;
+}
+/* moblie */
+
+@media (max-width: 650px) {
+  .nav-toggle-btn {
+    border: none;
+    display: initial;
+    background: white;
+    margin-left: auto;
+    align-self: flex-start;
+  }
+
+  .links-active {
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  #nav .display-none {
+    display: none;
+  }
+  #nav .logo {
+    margin: 0;
+  }
+  .start-btn {
+    display: none;
+  }
+}
+
+/* 650px */
 </style>
