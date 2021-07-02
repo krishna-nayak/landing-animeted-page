@@ -93,22 +93,19 @@ section {
     align-self: flex-start;
 }
 .box-container {
-    max-width: 500px;
-    /* width: 400px; */
-    width: clamp(450px, 100%, 500px);
+    width: clamp(350px, 100%, 500px);
     height: 300px;
     transform: translateY(1000px);
     animation: CardEnter 1s ease forwards;
     position: absolute;
     right: 100px;
     top: 30px;
-    /* transition: all 1s; */
 }
 .box {
     position: relative;
     margin-left: auto;
+    padding-bottom: 20px;
     width: 100%;
-    height: 100%;
     background: lightskyblue;
     border-radius: 20px;
     box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.2);
@@ -248,6 +245,9 @@ section {
         align-items: center;
         margin: 0 auto;
     }
+    .text h1 {
+        font-size: clamp(1.5rem, 10.5vw, 4rem);
+    }
     .text .start-btn {
         align-self: center;
     }
@@ -258,9 +258,16 @@ section {
         bottom: 0;
         margin: 300px auto;
         top: 50%;
+        padding: 10px;
     }
     .box {
         width: 100%;
+    }
+}
+
+@media (max-width: 465px) {
+    .box h2 {
+        font-size: clamp(1.5rem, 5.4vw, 1.9rem);
     }
 }
 </style>
