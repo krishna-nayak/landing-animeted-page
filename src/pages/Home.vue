@@ -1,11 +1,11 @@
 <template>
-    <AppBody />
+  <AppBody />
 </template>
 
 <script>
 import AppBody from "../components/AppBody.vue";
 export default {
-    components: { AppBody },
+  components: { AppBody },
 };
 </script>
 

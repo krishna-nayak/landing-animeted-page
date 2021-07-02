@@ -5,31 +5,31 @@ import About from "../pages/About.vue";
 import Features from "../pages/Features.vue";
 import Contact from "../pages/Contact.vue";
 const routes = [
-    {
-        path: "/",
-        name: "Home",
-        component: Home,
-    },
-    {
-        path: "/about",
-        name: "About",
-        component: About,
-    },
-    {
-        path: "/features",
-        name: "Features",
-        component: Features,
-    },
-    {
-        path: "/contact",
-        name: "Contact",
-        component: Contact,
-    },
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
+  },
+  {
+    path: "/features",
+    name: "Features",
+    component: Features,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: Contact,
+  },
 ];
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
-    routes,
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
 });
 
 export default router;
