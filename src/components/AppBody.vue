@@ -242,7 +242,7 @@ section {
   .text {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%);
     text-align: center;
     justify-content: center;
     align-items: center;
