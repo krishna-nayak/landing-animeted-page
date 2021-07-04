@@ -18,7 +18,7 @@
       />
     </div>
     <div class="text">
-      <h1>Playbank - Enjoy Financial Success</h1>
+      <h1 class="font-bold">Playbank - Enjoy Financial Success</h1>
       <p>We help our user to make the right financial decisions.</p>
       <button class="start-btn">Start Now</button>
     </div>
