@@ -303,6 +303,13 @@ section {
     width: 100%;
   }
 }
+@media (max-width: 650px) {
+  .text .start-btn {
+    position: relative;
+    opacity: 1;
+    width: 100%;
+  }
+}
 
 @media (max-width: 465px) {
   .box h2 {
