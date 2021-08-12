@@ -18,20 +18,17 @@
       />
     </div>
     <div class="text">
-      <h1>Playbank - Enjoy Financial Success</h1>
-      <p>We help our user to make the right financial decisions.</p>
-      <button class="start-btn">Start Now</button>
+      <h1>Meet banking that keeps pace with you</h1>
+      <p>Join the exclusive Firstlist and get 10% cashback on all spends</p>
+      <form action="#" method="post" class="form-number">
+        <input type="number" class="number" placeholder="Type your number" />
+        <div class="prefix">+91</div>
+        <button class="start-btn">check firstlist status</button>
+      </form>
     </div>
     <div class="box-container">
       <div class="box card-motion">
-        <h1>VISA</h1>
-        <div class="gold"></div>
-        <h2>2303 2530 0033 3493</h2>
-        <div class="exp">
-          <p class="exp-text">EXSPRESS END</p>
-          <p>10/24</p>
-        </div>
-        <h3>Ujjwal Kr. Situ</h3>
+        <img src="../assets/card.png" alt="card" class="card" />
       </div>
     </div>
     <div class="circle"></div>
@@ -39,9 +36,50 @@
 </template>
 
 <style scoped>
+.form-number {
+  width: 100%;
+  position: relative;
+  font-size: 1.5rem;
+  margin: 40px 0;
+}
+.prefix {
+  position: absolute;
+  top: 17px;
+  left: 10px;
+}
+.number {
+  width: 100%;
+  height: 65px;
+  font-size: inherit;
+  border-radius: 10px;
+  padding-left: 70px;
+  border: 2px solid #eec07a;
+  transition: all 0.3s ease;
+}
+.number:focus {
+  border: 3px solid #e48f10;
+  outline: #e48f10;
+}
+.text .start-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  text-transform: capitalize;
+  padding: 20px 50px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(to right, #e48f10, #efb45a, #eec07a);
+  font-weight: 600;
+  color: white;
+  align-self: flex-start;
+  opacity: 0.9;
+}
+.text .start-btn:active {
+  opacity: 1;
+}
 section {
   height: calc(100vh - 122px);
-  overflow: hidden;
+  overflow-y: clip;
   position: relative;
   padding: 50px 0;
 }
@@ -76,23 +114,13 @@ section {
   font-size: 1.25rem;
 }
 .text h1 {
-  width: 12ch;
-  font-size: clamp(2rem, 20vw, 4rem);
+  width: 14ch;
+  font-size: 4rem;
 }
 .text p {
-  width: 25ch;
+  width: 30ch;
 }
-.text .start-btn {
-  margin: 40px 0;
-  padding: 20px 50px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(to right, #e48f10, #efb45a, #eec07a);
-  font-weight: 600;
-  color: white;
-  align-self: flex-start;
-  border: 2px solid white;
-}
+
 .box-container {
   width: clamp(300px, 100%, 500px);
   height: 300px;
@@ -102,16 +130,18 @@ section {
   right: 100px;
   top: 30px;
 }
+
 .box {
   position: relative;
   margin-left: auto;
   padding-bottom: 20px;
   width: 100%;
-  background: lightskyblue;
   border-radius: 20px;
-  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.2);
   transition: all 1s;
-  /* border: 2px solid white; */
+}
+
+.card {
+  width: 100%;
 }
 .card-motion {
   animation: cardMotion 2s ease-in-out 1s infinite alternate;
@@ -212,27 +242,33 @@ section {
     transform: translateY(0%);
   }
   to {
-    transform: translateY(20%);
+    transform: translateY(10%);
   }
 }
 
 /*MEDIA*/
-@media (max-width: 1150px) {
+@media (max-width: 1230px) {
   .box-container {
     right: 50px;
   }
   .box {
-    width: 90%;
+    width: 85%;
   }
   .text {
     margin: 0 500px 0 50px;
   }
+  .text h1 {
+    font-size: 3.7rem;
+  }
   .box h2 {
     letter-spacing: 2px;
   }
+  .text .start-btn {
+    padding: 20px 30px;
+  }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 980px) {
   section {
     height: 100vh;
     margin-bottom: 300px;
@@ -249,10 +285,10 @@ section {
     margin: 0 auto;
   }
   .text h1 {
-    font-size: clamp(1.5rem, 10.5vw, 4rem);
+    font-size: clamp(2.5rem, 10.5vw, 4rem);
   }
-  .text .start-btn {
-    align-self: center;
+  .form-number {
+    align-self: auto;
   }
   .box-container {
     top: 0;

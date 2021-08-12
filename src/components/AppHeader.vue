@@ -24,7 +24,9 @@
       </router-link>
     </div>
 
-    <button type="submit" class="start-btn">Start Now</button>
+    <button type="submit" class="start-btn" @click="$emit('open-login-modal')">
+      Check your position
+    </button>
     <button @click="navMenu" class="nav-toggle-btn">
       <i class="fas fa-bars fa-2x"></i>
     </button>
@@ -84,14 +86,21 @@ export default {
   top: 50%;
   right: 30px;
   transform: translate(0, -50%);
-  width: 150px;
-  padding: 15px 20px;
+  padding: 15px 30px;
   border-radius: 10px;
-  border: 1px solid grey;
+  border: 1px solid black;
   font-weight: 600;
   background: transparent;
+  transition: all 0.2s ease;
 }
-
+#nav .start-btn:hover {
+  border: 2px solid white;
+  color: white;
+  background: linear-gradient(to right, #e48f10, #efb45a, #eec07a);
+}
+#nav .start-btn:active {
+  opacity: 0.7;
+}
 .nav-toggle-btn {
   display: none;
 }

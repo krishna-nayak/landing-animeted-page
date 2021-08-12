@@ -1,13 +1,22 @@
 <template>
-  <AppHeader />
+  <AppHeader @open-login-modal="isLogin = true" />
+  <Login v-if="isLogin" @close-login="isLogin = false" />
+
   <router-view />
 </template>
 
 <script>
 import AppHeader from "./components/AppHeader.vue";
+import Login from "./components/Login.vue";
 export default {
   components: {
     AppHeader,
+    Login,
+  },
+  data() {
+    return {
+      isLogin: false,
+    };
   },
 };
 </script>
